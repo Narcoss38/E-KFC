@@ -84,33 +84,36 @@ class HomeFragment : Fragment() {
         val request = Request.Builder()
             .url(url)
             .build()
+        Log.d("click", "run: " + request)
 
         client.newCall(request).enqueue(object : Callback {
             override fun onFailure(call: Call, e: IOException) {
-
+                Log.d("click", "onFailure: " + e)
             }
 
             override fun onResponse(call: Call, response: Response) {
+                Log.d("click", "onResponse: ")
                 var str_response = response.body()!!.string()
 
                 val json: JSONObject = JSONObject(str_response)
 
-                var jsonArray: JSONArray = json.getJSONArray("temperature")
-                var size: Int = jsonArray.length()
-                arrayList = ArrayList()
-                for (i in 0 until size) {
-                    var jsonObject: JSONObject = jsonArray.getJSONObject(i)
-                    var model: Model = Model()
-                    model.temperature = jsonObject.getLong("temperature")
-                    arrayList.add(model)
-
-                }
-                Log.d("click", "jsonArray: " + jsonArray)
+//                var jsonArray: JSONArray = json.getJSONArray("temperature")
+//                var size: Int = jsonArray.length()
+//                arrayList = ArrayList()
+//                for (i in 0 until size) {
+//                    var jsonObject: JSONObject = jsonArray.getJSONObject(i)
+//                    var model: Model = Model()
+//                    model.temperature = jsonObject.getLong("temperature")
+//                    arrayList.add(model)
+//
+//                }
+                Log.d("click", "json: " + json)
                 Log.d("click", "arrayList: " + arrayList)
-                homeViewModel.setActualTemp(arrayList.last().temperature)
-
+                homeViewModel.setActualTemp(json.get("temperature").toString())
             }
+
         })
+
     }
 
     override fun onDestroyView() {

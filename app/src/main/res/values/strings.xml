@@ -5,7 +5,7 @@
     <string name="title_time">Time</string>
     <string name="title_temp">Temp</string>
     <string name="title_e_kfc">E-KFC</string>
-    <string name="temperature">%1$d°C</string>
+    <string name="temperature">%1$s°C</string>
     <string name="thermostat">thermostat %1$d°C</string>
     <string name="grain_percent">83%</string>
     <string name="eau_percent">60%</string>
