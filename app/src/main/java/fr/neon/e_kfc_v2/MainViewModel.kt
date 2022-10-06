@@ -7,8 +7,8 @@ import androidx.lifecycle.MutableLiveData
 
 class MainViewModel : ViewModel() {
 
-    private val _actualTemp = MutableLiveData<Int>(15)
-    val actualTemp: LiveData<Int> get() = _actualTemp
+    private val _actualTemp = MutableLiveData<Long>(15)
+    val actualTemp: LiveData<Long> get() = _actualTemp
     private val _selectedTemp = MutableLiveData<Int>(23)
     val selectedTemp: LiveData<Int> get() = _selectedTemp
 
@@ -21,8 +21,10 @@ class MainViewModel : ViewModel() {
         _selectedTemp.value = (selectedTemp.value)?.minus(value)
     }
 
-    fun setActualTemp(value: Double) {
-        _actualTemp.value = value.toInt()
+    fun setActualTemp(value: Long) {
+        _actualTemp.value = value
     }
+
+
 
 }

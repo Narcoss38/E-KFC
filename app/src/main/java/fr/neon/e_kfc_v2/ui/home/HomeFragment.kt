@@ -1,6 +1,7 @@
 package fr.neon.e_kfc_v2.ui.home
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -72,15 +73,11 @@ class HomeFragment : Fragment() {
 
         binding.imageView.setOnClickListener {
             run("http://192.168.93.197")
+            Log.d("click", "try run: " + homeViewModel.actualTemp.value)
         }
 
 
         return root
-    }
-
-    override fun onResume() {
-        super.onResume()
-
     }
 
     fun run(url: String) {
@@ -104,11 +101,12 @@ class HomeFragment : Fragment() {
                 for (i in 0 until size) {
                     var jsonObject: JSONObject = jsonArray.getJSONObject(i)
                     var model: Model = Model()
-                    model.temperature = jsonObject.getInt("temperature").toDouble()
+                    model.temperature = jsonObject.getLong("temperature")
                     arrayList.add(model)
 
                 }
-
+                Log.d("click", "jsonArray: " + jsonArray)
+                Log.d("click", "arrayList: " + arrayList)
                 homeViewModel.setActualTemp(arrayList.last().temperature)
 
             }
