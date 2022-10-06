@@ -4,6 +4,7 @@
     <string name="title_feed">Feed</string>
     <string name="title_time">Time</string>
     <string name="title_temp">Temp</string>
+    <string name="title_camera">Camera</string>
     <string name="title_e_kfc">E-KFC</string>
     <string name="temperature">%1$s°C</string>
     <string name="thermostat">thermostat %1$d°C</string>
@@ -48,4 +49,6 @@
         <item>18:30</item>
         <item>19:00</item>
     </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

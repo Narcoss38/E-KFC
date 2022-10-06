@@ -27,4 +27,9 @@
         android:name="fr.neon.e_kfc_v2.ui.temp.TempFragment"
         android:label="@string/title_temp"
         tools:layout="@layout/fragment_temp" />
+    <fragment
+        android:id="@+id/navigation_camera"
+        android:name="fr.neon.e_kfc_v2.ui.CameraFragment"
+        android:label="@string/title_camera"
+        tools:layout="@layout/fragment_camera"/>
 </navigation>

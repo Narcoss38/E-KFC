@@ -12,6 +12,7 @@ import fr.neon.e_kfc_v2.MainViewModel
 import fr.neon.e_kfc_v2.Model
 import fr.neon.e_kfc_v2.R
 import fr.neon.e_kfc_v2.databinding.FragmentHomeBinding
+import fr.neon.e_kfc_v2.ui.CameraFragment
 import fr.neon.e_kfc_v2.ui.feed.FeedFragment
 import fr.neon.e_kfc_v2.ui.temp.TempFragment
 import okhttp3.*
@@ -67,6 +68,13 @@ class HomeFragment : Fragment() {
         binding.imageView4.setOnClickListener {
             val fragmentManager = fragmentManager?.beginTransaction()
             fragmentManager?.replace(R.id.nav_host_fragment_activity_main, FeedFragment())
+            fragmentManager?.disallowAddToBackStack()
+            fragmentManager?.commit()
+        }
+
+        binding.imageView6.setOnClickListener {
+            val fragmentManager = fragmentManager?.beginTransaction()
+            fragmentManager?.replace(R.id.nav_host_fragment_activity_main, CameraFragment())
             fragmentManager?.disallowAddToBackStack()
             fragmentManager?.commit()
         }
