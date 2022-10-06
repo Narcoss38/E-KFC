@@ -70,13 +70,16 @@ class HomeFragment : Fragment() {
             fragmentManager?.commit()
         }
 
+        binding.imageView.setOnClickListener {
+            run("http://192.168.93.197")
+        }
+
 
         return root
     }
 
     override fun onResume() {
         super.onResume()
-        //run("http://10.0.0.7:8080/jsondata/index.html")
 
     }
 
