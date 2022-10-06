@@ -84,6 +84,16 @@ class HomeFragment : Fragment() {
             Log.d("click", "try run: " + homeViewModel.actualTemp.value)
         }
 
+        binding.imageLightOff.setOnClickListener {
+            binding.imageLightOff.visibility = View.GONE
+            binding.imageLightOn.visibility = View.VISIBLE
+        }
+
+        binding.imageLightOn.setOnClickListener {
+            binding.imageLightOff.visibility = View.VISIBLE
+            binding.imageLightOn.visibility = View.GONE
+        }
+
 
         return root
     }
